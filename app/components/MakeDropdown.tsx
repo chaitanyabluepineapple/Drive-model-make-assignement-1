@@ -8,7 +8,6 @@ type MakeDropdownProps = {
 };
 
 export default function MakeDropdown({ makes, selectedMake, onChange }: MakeDropdownProps) {
-  console.log('makes: ', makes);
   return (
     <div className="space-y-1">
       <label className="block text-sm font-medium text-gray-700">Select Vehicle Make</label>

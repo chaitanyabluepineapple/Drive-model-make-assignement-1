@@ -12,8 +12,6 @@ type Make = {
 export const useVehicleData = (initialMakes?: Make[]) => {
     const shouldFetch = typeof window !== "undefined" && (!initialMakes || initialMakes.length === 0);
 
-    console.log('shouldFetch: ', shouldFetch);
-
     // Using SWR here to handles fetching and caching for vehicle makes
     const { data, error: makesError, isLoading: loadingMakes } = useSWR(
         shouldFetch ? "https://vpic.nhtsa.dot.gov/api/vehicles/GetAllMakes?format=json" : null,
