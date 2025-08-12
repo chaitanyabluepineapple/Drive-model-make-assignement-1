@@ -7,13 +7,9 @@ import FetchButton from "../components/FetchButton";
 import ModelCards from "../components/ModelCards";
 import Loader from "../components/Loader";
 import ErrorAlert from "../components/ErrorAlert";
+import { ClientMakeDropdownProps } from "../types/vehicles";
 
-type Props = {
-    initialMakes?: { Make_ID: number; Make_Name: string }[];
-    label?: string;
-};
-
-export default function ClientMakes({ initialMakes, label }: Props) {
+export default function ClientMakes({ initialMakes, label }: ClientMakeDropdownProps) {
     const {
         makes,
         models,

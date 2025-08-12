@@ -1,15 +1,11 @@
 // useVehicleData.ts
 import { useState } from "react";
 import useSWR from "swr";
+import { VechicleMake } from "../types/vehicles";
 
 export const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-type Make = {
-    Make_ID: number;
-    Make_Name: string;
-};
-
-export const useVehicleData = (initialMakes?: Make[]) => {
+export const useVehicleData = (initialMakes?: VechicleMake[]) => {
     const shouldFetch = typeof window !== "undefined" && (!initialMakes || initialMakes.length === 0);
 
     // Using SWR here to handles fetching and caching for vehicle makes

@@ -1,11 +1,6 @@
 "use client";
 import React from "react";
-
-type MakeDropdownProps = {
-  makes: { Make_ID: number; Make_Name: string }[];
-  selectedMake: string;
-  onChange: (value: string) => void;
-};
+import { MakeDropdownProps } from "../types/vehicles";
 
 export default function MakeDropdown({ makes, selectedMake, onChange }: MakeDropdownProps) {
   return (

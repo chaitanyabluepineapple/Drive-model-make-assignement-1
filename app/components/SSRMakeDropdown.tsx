@@ -7,12 +7,9 @@ import ModelCards from "./ModelCards";
 import Loader from "./Loader";
 import ErrorAlert from "./ErrorAlert";
 import { useVehicleData } from "../hooks/useVehicleData"; // Custom hook for fetching models
+import { SSRMakeDropdownProps } from "../types/vehicles";
 
-type Props = {
-  initialMakes: { Make_ID: number; Make_Name: string }[];
-};
-
-export default function SSRMakesClient({ initialMakes }: Props) {
+export default function SSRMakesClient({ initialMakes }: SSRMakeDropdownProps) {
   const [selectedMake, setSelectedMake] = useState("");
   const selectedMakeRef = useRef("");
   const {
